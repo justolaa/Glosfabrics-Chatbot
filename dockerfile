@@ -12,4 +12,4 @@ COPY . /app
 EXPOSE 5005
 
 # Specify the start command for Nixpacks and Docker
-CMD ["rasa", "run", "--enable-api", "--cors", "*", "--model", "models/archive.tar.gz"]
+CMD ["run", "--enable-api", "--cors", "*", "--model", "models/archive.tar.gz"]

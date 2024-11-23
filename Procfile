@@ -1,1 +1,1 @@
-web: rasa run --enable-api --cors "*" --model models/archive.tar.gz
+web: run --enable-api --cors "*" --model models/archive.tar.gz
