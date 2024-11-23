@@ -4,14 +4,14 @@ FROM rasa/rasa:3.3.0
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the project files, including the requirements.txt, into the container
+# Copy the project files into the container
 COPY . /app
 
-# Install the Python dependencies from requirements.txt (make sure requirements.txt is present)
+# Install Python dependencies from requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the default Rasa API port
 EXPOSE 5005
 
-# Run the Rasa server, specifying the model
-CMD ["run", "--enable-api", "--cors", "*", "--model", "models/archive.tar.gz"]
+# Specify the start command for Nixpacks and Docker
+CMD ["rasa", "run", "--enable-api", "--cors", "*", "--model", "models/archive.tar.gz"]
