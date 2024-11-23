@@ -7,8 +7,6 @@ WORKDIR /app
 # Copy the project files into the container
 COPY . /app
 
-# Install Python dependencies from requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the default Rasa API port
 EXPOSE 5005
