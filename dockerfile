@@ -10,6 +10,6 @@ WORKDIR /app
 # Expose the default Rasa API port
 EXPOSE 5005
 
-# Run the Rasa server, specifying the model
+# Run the Rasa server, specifying the modell
 CMD ["run", "--enable-api", "--cors", "*", "--model", "models/archive.tar.gz"]
 
