@@ -7,7 +7,6 @@ WORKDIR /app
 # Copy the project files into the container
 COPY . /app
 
-
 # Expose the default Rasa API port
 EXPOSE 5005
 
