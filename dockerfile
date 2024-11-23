@@ -1,4 +1,4 @@
-# Use the official Rasa image 
+# Use the official Rasa image
 FROM rasa/rasa:3.3.0
 
 # Set the working directory inside the container
@@ -7,8 +7,12 @@ WORKDIR /app
 # Copy the project files into the container
 COPY . /app
 
-# Install Python dependencies from requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# Install numpy first to avoid version conflicts
+RUN pip install numpy==1.21.6
+
+# Create and activate a virtual environment
+RUN python -m venv /opt/venv
+RUN /opt/venv/bin/pip install -r requirements.txt
 
 # Expose the default Rasa API port
 EXPOSE 5005
