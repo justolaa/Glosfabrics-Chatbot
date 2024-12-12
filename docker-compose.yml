@@ -1,0 +1,16 @@
+# docker-compose.yml
+version: '3.8'
+services:
+  rasa:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5005:5005"
+    environment:
+      - RASA_TELEMETRY_ENABLED=false
+    volumes:
+      - ./models:/app/models
+      - ./credentials.yml:/app/credentials.yml
+      - ./endpoints.yml:/app/endpoints.yml
+    restart: always

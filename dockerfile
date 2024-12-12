@@ -1,5 +1,5 @@
 # Use the official Rasa image 
-FROM python:3.9-slim
+FROM rasa/rasa:3.3.0
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -11,4 +11,4 @@ COPY . /app
 EXPOSE 5005
 
 # Specify the start command for Nixpacks and Docker
-CMD ["/opt/venv/bin/rasa", "run", "--enable-api", "--cors", "*", "--model", "models/latest.tar.gz", "--port", "5005","--no-prediction", "--disable-torch"]
+CMD ["run", "--enable-api", "--cors", "*", "--model", "models/latest.tar.gz", "--port", "5005","--no-prediction", "--disable-torch"]
